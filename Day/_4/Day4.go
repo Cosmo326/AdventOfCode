@@ -37,8 +37,7 @@ func GetResult2 () (string, error){
 	valid := 0
 
 	for _,v := range inputArr{
-		//regex, regexErr := regexp.Compile("(byr:[0-9]{4})|(iyr:[0-9]{4})|(eyr:[0-9]{4})|(hgt:[0-9]{2,3}[ci][mn])|(hcl:#[0-9a-f]{6})|(ecl:[a-z]{3})|(pid:[0-9]{9})")
-		regex, regexErr := regexp.Compile("byr:\\w+|iyr:\\w+|eyr:\\w+|hgt:\\w+|hcl:#\\w+|ecl:\\w+|pid:\\w+")
+		regex, regexErr := regexp.Compile("(byr:[0-9]{4})|(iyr:[0-9]{4})|(eyr:[0-9]{4})|(hgt:[0-9]{2,3}[ci][mn])|(hcl:#[0-9a-f]{6})|(ecl:[a-z]{3})|(pid:[0-9]{9}\\b)")
 		if regexErr != nil{
 			log.Fatal(regexErr)
 		}
@@ -60,7 +59,6 @@ func GetResult2 () (string, error){
 		}
 	}
 
-	// should be 194
 	return fmt.Sprintf("%d", valid), nil
 }
 
