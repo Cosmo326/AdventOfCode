@@ -19,8 +19,10 @@ func main() {
 		for i := 1; i < 26; i++ {
 			RunDay(i)
 		}
-	} else {
+	} else if time.Now().Month() == 12 && time.Now().Year() == 2020 && time.Now().Day() < 26 {
 		RunDay(*day)
+	} else {
+		println("2020 Advent of Code has completed.  Check the Help menu to se how to rerun any and all days")
 	}
 }
 
