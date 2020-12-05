@@ -6,8 +6,8 @@ import (
 	"log"
 )
 
-func ReadDayInput(dayNumber int, fileName string) string{
-	file, error := ioutil.ReadFile(fmt.Sprintf("_2020/_%d/%s", dayNumber, fileName))
+func ReadDayInput(yearNumber, dayNumber int, fileName string) string{
+	file, error := ioutil.ReadFile(fmt.Sprintf("Year/_%d/_%d/%s", yearNumber, dayNumber, fileName))
 	if error != nil{
 		log.Fatal(error)
 	}

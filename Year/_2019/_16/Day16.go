@@ -1,5 +1,6 @@
 package _16
 
+const YearNumber = 2015
 const DayNumber = 16
 const FileName = "input.txt"
 

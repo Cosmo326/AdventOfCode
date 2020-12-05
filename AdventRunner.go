@@ -11,7 +11,7 @@ import (
 func main() {
 
 	year := flag.Int("Year", time.Now().Year(), "Choose which year to run. Default is current year")
-	day := flag.Int("_2020", time.Now().Day(), "Choose which day to run. Default is current day")
+	day := flag.Int("Day", time.Now().Day(), "Choose which day to run. Default is current day")
 	all := flag.Bool("All", false, "Run all days")
 	allYear := flag.Bool("AllYear", false, "Run all days for a specific year.  If year flag is not specified current year will be run")
 
@@ -27,7 +27,7 @@ func main() {
 		for d := 1; d < 26; d++ {
 			RunDay(*year, d)
 		}
-	} else if time.Now().Month() == 12 && time.Now().Day() < 26 {
+	} else if time.Now().Day() < 26 {
 		RunDay(*year, *day)
 	} else {
 		println("Advent of Code is not currently running.  Check the Help menu to see how to rerun any and all days")

@@ -8,11 +8,12 @@ import (
 	"strings"
 )
 
+const YearNumber = 2020
 const DayNumber = 2
 const FileName = "input.txt"
 
 func GetResult1 () (string, error) {
-	inputString := Importer.ReadDayInput(DayNumber, FileName)
+	inputString := Importer.ReadDayInput(YearNumber, DayNumber, FileName)
 	inputArr := strings.Split(inputString, "\r\n")
 
 	successCount := 0
@@ -35,7 +36,7 @@ func GetResult1 () (string, error) {
 }
 
 func GetResult2 () (string, error) {
-	inputString := Importer.ReadDayInput(DayNumber, FileName)
+	inputString := Importer.ReadDayInput(YearNumber, DayNumber, FileName)
 	inputArr := strings.Split(inputString, "\r\n")
 
 	successCount := 0

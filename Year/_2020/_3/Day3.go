@@ -6,11 +6,12 @@ import (
 	"strings"
 )
 
+const YearNumber = 2020
 const DayNumber = 3
 const FileName = "input.txt"
 
 func GetResult1 () (string, error){
-	inputString := Importer.ReadDayInput(DayNumber, FileName)
+	inputString := Importer.ReadDayInput(YearNumber, DayNumber, FileName)
 	hillMap := strings.Split(inputString, "\r\n")
 
 	treesEncountered := GetTreesEncountered(hillMap, 3, 1)
@@ -19,7 +20,7 @@ func GetResult1 () (string, error){
 }
 
 func GetResult2 () (string, error){
-	inputString := Importer.ReadDayInput(DayNumber, FileName)
+	inputString := Importer.ReadDayInput(YearNumber, DayNumber, FileName)
 	hillMap := strings.Split(inputString, "\r\n")
 
 	treesEncountered := GetTreesEncountered(hillMap, 1, 1)

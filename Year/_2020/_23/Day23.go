@@ -1,5 +1,6 @@
 package _23
 
+const YearNumber = 2020
 const DayNumber = 23
 const FileName = "input.txt"
 
