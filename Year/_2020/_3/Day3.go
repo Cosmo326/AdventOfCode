@@ -1,7 +1,7 @@
 package _3
 
 import (
-	"AdventOfCode2020/Importer"
+	"AdventOfCode/Importer"
 	"fmt"
 	"strings"
 )

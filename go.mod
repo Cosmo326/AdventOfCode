@@ -1,3 +1,3 @@
-module AdventOfCode2020
+module AdventOfCode
 
 go 1.15

@@ -1,7 +1,7 @@
 package _4
 
 import (
-	"AdventOfCode2020/Importer"
+	"AdventOfCode/Importer"
 	"fmt"
 	"log"
 	"regexp"

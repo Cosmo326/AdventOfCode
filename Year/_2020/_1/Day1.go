@@ -1,8 +1,8 @@
 package _1
 
 import (
-	"AdventOfCode2020/Importer"
-	"AdventOfCode2020/Logger"
+	"AdventOfCode/Importer"
+	"AdventOfCode/Logger"
 	"errors"
 	"strconv"
 	"strings"

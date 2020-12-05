@@ -1,7 +1,7 @@
 package main
 
 import (
-	"AdventOfCode2020/Day"
+	"AdventOfCode/Year"
 	"flag"
 	"fmt"
 	"log"
@@ -10,33 +10,36 @@ import (
 
 func main() {
 
-	day := flag.Int("Day", time.Now().Day(), "Choose which day to run")
-	all := flag.Bool("All", false, "Run All Days")
+	year := flag.Int("Year", time.Now().Year(), "Choose which year to run. Default is current year")
+	day := flag.Int("_2020", time.Now().Day(), "Choose which day to run. Default is current day")
+	all := flag.Bool("All", false, "Run all days")
 
 	flag.Parse()
 
 	if *all {
-		for i := 1; i < 26; i++ {
-			RunDay(i)
+		for y := 2015; y <= *year; y++ {
+			for d := 1; d < 26; d++ {
+				RunDay(y, d)
+			}
 		}
-	} else if time.Now().Month() == 12 && time.Now().Year() == 2020 && time.Now().Day() < 26 {
-		RunDay(*day)
+	} else if time.Now().Month() == 12 && time.Now().Day() < 26 {
+		RunDay(*year, *day)
 	} else {
-		println("2020 Advent of Code has completed.  Check the Help menu to se how to rerun any and all days")
+		println("Advent of Code is not currently running.  Check the Help menu to see how to rerun any and all days")
 	}
 }
 
-func RunDay(dayNumber int){
-	result, dayRunnerError := Day.Run(dayNumber)
+func RunDay(yearNumber, dayNumber int){
+	result, dayRunnerError := Year.RunYear(yearNumber, dayNumber)
 
 	if dayRunnerError != nil{
 		log.Fatal(dayRunnerError)
 	}
 
 	println()
-	println(fmt.Sprintf("Day %d", dayNumber))
-	println(fmt.Sprintf("    Answer 1 is: %s", result[0]))
-	println(fmt.Sprintf("    Answer 2 is: %s", result[1]))
+	println(fmt.Sprintf("12/%d/%d", dayNumber, yearNumber))
+	println(fmt.Sprintf("  Answer 1 is: %s", result[0]))
+	println(fmt.Sprintf("  Answer 2 is: %s", result[1]))
 	println()
 }
 
