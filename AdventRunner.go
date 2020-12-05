@@ -13,6 +13,7 @@ func main() {
 	year := flag.Int("Year", time.Now().Year(), "Choose which year to run. Default is current year")
 	day := flag.Int("_2020", time.Now().Day(), "Choose which day to run. Default is current day")
 	all := flag.Bool("All", false, "Run all days")
+	allYear := flag.Bool("AllYear", false, "Run all days for a specific year.  If year flag is not specified current year will be run")
 
 	flag.Parse()
 
@@ -21,6 +22,10 @@ func main() {
 			for d := 1; d < 26; d++ {
 				RunDay(y, d)
 			}
+		}
+	} else if *allYear {
+		for d := 1; d < 26; d++ {
+			RunDay(*year, d)
 		}
 	} else if time.Now().Month() == 12 && time.Now().Day() < 26 {
 		RunDay(*year, *day)
